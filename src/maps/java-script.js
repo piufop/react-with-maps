@@ -26,12 +26,10 @@ export default class JavaScriptMap extends React.Component {
     let points = [];
     for (let i = 0; i < 500; i++) {
       points.push({
-        latitude: chance.latitude({ min: -19.99, max: -19.77 }),
-        longitude: chance.longitude({ min: -44.10, max: -43.85 }),
-        weight: chance.integer({ min: 1, max: 50 })
+        location: new this.maps.LatLng(chance.latitude({ min: -19.99, max: -19.77 }), chance.longitude({ min: -44.10, max: -43.85 }))
       })
     }
-    this.setState({ points });
+    this.heatmap.setData(points);
   }
 
   render() {
@@ -47,10 +45,10 @@ export default class JavaScriptMap extends React.Component {
             center={this.props.center} zoom={this.props.zoom}
             yesIWantToUseGoogleMapApiInternals
             onGoogleApiLoaded={({ map, maps }) => {
-              const heatmap = new maps.visualization.HeatmapLayer({
-                data: this.state.points
-              });
-              heatmap.setMap(map);
+              this.map = map;
+              this.maps = maps;
+              this.heatmap = new this.maps.visualization.HeatmapLayer();
+              this.heatmap.setMap(map);
             }}>
 
           </GoogleMapReact>

@@ -1,7 +1,6 @@
 const firebase = require('firebase');
-const config = require('./config/config');
 const Chance = require('chance');
-
+const config = require('../config/config');
 const chance = new Chance();
 
 const firebaseConfig = {
@@ -25,7 +24,7 @@ firebase.auth().signInWithEmailAndPassword(config.FIREBASE_EMAIL, config.FIREBAS
       latitude: chance.latitude({ min: -19.99, max: -19.77 }),
       longitude: chance.longitude({ min: -44.10, max: -43.85 })
     }).then((result) => {
-      console.log('Result:', result);
+      console.log('Created point');
     }).catch((error) => {
       console.log('Error:', error);
     });
