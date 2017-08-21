@@ -3,8 +3,11 @@
   "FIREBASE_AUTH_DOMAIN": "study-react-fd8eb.firebaseapp.com",
   "FIREBASE_DATABASE_URL": "https://study-react-fd8eb.firebaseio.com",
   "FIREBASE_PROJECT_ID": "study-react-fd8eb",
-  "FIREBASE_STORAGE_BUCKET": "",
+  "FIREBASE_STORAGE_BUCKET": "study-react-fd8eb.appspot.com",
   "FIREBASE_MESSAGING_SENDER_ID": "905432127981",
+
+  "FIREBASE_EMAIL": "dae@dae.com",
+  "FIREBASE_PASSWORD": "123456",
 
   "GOOGLE_API_KEY": "AIzaSyByH0c5bxYDZ48BLQ401BBsm4DppG6QNkQ",
   "GOOGLE_MAPS_INITIAL_ZOOM": 12
