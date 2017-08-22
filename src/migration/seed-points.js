@@ -21,8 +21,8 @@ firebase.auth().signInWithEmailAndPassword(config.FIREBASE_EMAIL, config.FIREBAS
   console.log('User authenticated');
   for (let i = 0; i < 500; i++) {
     database.ref('points/' + i).set({
-      latitude: chance.latitude({ min: -19.99, max: -19.77 }),
-      longitude: chance.longitude({ min: -44.10, max: -43.85 })
+      latitude: chance.latitude({ min: -20.10, max: -19.70 }),
+      longitude: chance.longitude({ min: -44.30, max: -43.70 })
     }).then((result) => {
       console.log('Created point');
     }).catch((error) => {
