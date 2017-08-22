@@ -22,8 +22,8 @@ export default class Home extends React.Component {
   render() {
     return (
       <div>
-        <RaisedButton label='JavaScript' primary={true} style={style} onClick={() => this.handleJavaScript()} />
-        <RaisedButton label='Fusion Table' primary={true} style={style} onClick={() => this.handleFusionTable()} />
+        <RaisedButton label='Heatmap' primary={true} style={style} onClick={() => this.handleJavaScript()} />
+        {/* <RaisedButton label='Fusion Table' primary={true} style={style} onClick={() => this.handleFusionTable()} /> */}
       </div>
     );
   }
