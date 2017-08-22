@@ -15,22 +15,28 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
+const total = 500;
 let points = [];
 
 firebase.auth().signInWithEmailAndPassword(config.FIREBASE_EMAIL, config.FIREBASE_PASSWORD).then(() => {
   console.log('User authenticated');
-  for (let i = 0; i < 500; i++) {
-    database.ref('points/' + i).set({
+  console.log(`Creating ${total} points`);
+  for (let i = 1; i <= total; i++) {
+    database.ref('points/' + chance.guid()).set({
       latitude: chance.latitude({ min: -20.10, max: -19.70 }),
       longitude: chance.longitude({ min: -44.30, max: -43.70 })
     }).then((result) => {
-      console.log('Created point');
+      if (i === total) {
+        console.log('Done');
+        process.exit(0);
+      }
     }).catch((error) => {
       console.log('Error:', error);
     });
   }
 }).catch((authError) => {
-  console.log(`Error code ${errorAuth.code}. Message: ${errorAuth.message}`);
+  console.log(`Error: ${errorAuth.message}`);
+  process.exit(1);
 });
 
 
