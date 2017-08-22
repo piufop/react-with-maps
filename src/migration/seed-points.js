@@ -22,7 +22,7 @@ firebase.auth().signInWithEmailAndPassword(config.FIREBASE_EMAIL, config.FIREBAS
   console.log('User authenticated');
   console.log(`Creating ${total} points`);
   for (let i = 1; i <= total; i++) {
-    database.ref('points/' + chance.guid()).set({
+    database.ref().child('points').push().set({
       latitude: chance.latitude({ min: -20.10, max: -19.70 }),
       longitude: chance.longitude({ min: -44.30, max: -43.70 })
     }).then((result) => {
@@ -35,7 +35,7 @@ firebase.auth().signInWithEmailAndPassword(config.FIREBASE_EMAIL, config.FIREBAS
     });
   }
 }).catch((authError) => {
-  console.log(`Error: ${errorAuth.message}`);
+  console.log(`Error: ${authError.message}`);
   process.exit(1);
 });
 
