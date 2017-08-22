@@ -38,11 +38,11 @@ export default class JavaScriptMap extends React.Component {
   render() {
     return (
       <div>
+        <div>
+          <IconButton onClick={this.fetch.bind(this)}><NavigationRefresh /></IconButton>
+          <IconButton onClick={this.clear.bind(this)}><NavigationCancel /></IconButton>
+        </div>
         <div style={style}>
-          <div >
-            <IconButton onClick={this.fetch.bind(this)}><NavigationRefresh /></IconButton>
-            <IconButton onClick={this.clear.bind(this)}><NavigationCancel /></IconButton>
-          </div>
           <GoogleMapReact bootstrapURLKeys={{
             key: config.GOOGLE_API_KEY,
             libraries: 'visualization'
@@ -57,7 +57,9 @@ export default class JavaScriptMap extends React.Component {
             }}>
           </GoogleMapReact>
         </div>
-        <BottomBar />
+        <div>
+          <BottomBar style={{ padding: 10 }} />
+        </div>
       </div >
     );
   }
