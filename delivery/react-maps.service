@@ -1,0 +1,15 @@
+[Unit]
+Description=React Maps
+
+[Service]
+ExecStart=/opt/react-maps/src/index.js
+Restart=always
+User=nobody
+# Note RHEL/Fedora uses 'nobody', Debian/Ubuntu uses 'nogroup'
+Group=nogroup
+# Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/opt/react-maps
+
+[Install]
+WantedBy=multi-user.target
