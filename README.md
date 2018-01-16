@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/piufop/react-with-maps/tree/master.svg?style=svg)](https://circleci.com/gh/piufop/react-with-maps/tree/master)
 
 ## Table of Contents
 
