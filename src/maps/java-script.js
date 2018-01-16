@@ -23,7 +23,7 @@ export default class JavaScriptMap extends React.Component {
     getPoints((result) => {
       let points = [];
       result.map((point) => {
-        points.push({
+        return points.push({
           location: new this.maps.LatLng(point.latitude, point.longitude)
         });
       });
